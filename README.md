@@ -21,23 +21,16 @@ The purpose of Project 1 is to implement an efficient hash-based symbol table fo
 File Listing (in alphabetical order):
 
 * COP3404Project1Code.java
-* input.txt
-* makefile
-* SeparateChainingSymbolTable.java
-* SequentialSearchSymbolTable.java
-
-Compilation and Cleanup:
-
-* Run the 'make' command. The makefile will automatically compile everything.
-* To delete the *.class files, run the 'make clean' command.
+* input1.txt
+* input2.txt
 
 Execution:
 
 * You can run the program using the java command.
-	* Example: 'java COP3404Project1Code input.txt'
+	* Example: 'java COP3404Project1Code input1.txt'
 * Replace 'input.txt' above with the name of any other plain-text file to supply custom test input.
 * You can also chain together multiple input files.
-	* Example: 'java COP3404Project1Code input1.txt input2.txt input3.txt'
+	* Example: 'java COP3404Project1Code input1.txt input2.txt'
 
 *******************************************************************
 

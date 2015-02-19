@@ -1,76 +1,96 @@
 /*
-	Title:	COP3404Project1Code
-	Author:	Matthew Boyette
-	Date:	2/11/2015
-	
-	
-*/
-
-import api.util.datastructures.SeparateChainingSymbolTable;
+ * Title: COP3404Project1Code
+ * Author: Matthew Boyette
+ * Date: 2/11/2015
+ *
+ * The purpose of Project 1 is to implement an efficient hash-based symbol table for the first
+ * and second passes of the SIC/XE assembler. It makes use of prime numbers, double hashing, hash
+ * chaining, and automatic size adjustment to avoid collisions.
+ */
 
 import java.io.File;
 import java.util.Scanner;
 
+import api.util.Support;
+import api.util.datastructures.SeparateChainingSymbolTable;
+
 public class COP3404Project1Code
-{	
-	public static void main(final String[] args)
+{
+	public static final void main(final String[] args)
 	{
+		COP3404Project1Code p1 = new COP3404Project1Code();
+
 		if (args.length > 0)
 		{
-			for (int i = 0; i < args.length; i++)
+			for (String arg: args)
 			{
-				readFile(args[i]);
+				p1.readFile(arg);
 			}
 		}
+		else
+		{
+			p1.readFile(Support.getFilePath(null, true, Support.promptDebugMode(null)));
+		}
 	}
-	
-	private static void readFile(final String fileName)
+
+	private SeparateChainingSymbolTable<String,Integer>	symbolTable	= null;
+
+	public COP3404Project1Code()
 	{
-		if ((fileName == null) || fileName.isEmpty())
+		this.setSymbolTable(new SeparateChainingSymbolTable<String,Integer>());
+	}
+
+	public final SeparateChainingSymbolTable<String,Integer> getSymbolTable()
+	{
+		return this.symbolTable;
+	}
+
+	public final void readFile(final String fileName)
+	{
+		Scanner inputStream = null; // Stream object for file input.
+
+		if ((fileName == null) || fileName.isEmpty()) // Empty strings and Null string pointers fail fast.
 		{
 			return;
 		}
-		
-		SeparateChainingSymbolTable<String,Integer>	symbolTable = new SeparateChainingSymbolTable<String,Integer>();
-		Scanner           							inputStream	= null; // Stream object for file input.
-		
-		// Read in file.
+
+		// Try to read the file.
 		try
 		{
 			// Initialize file stream. If the given path is invalid, an exception is thrown.
 			inputStream = new Scanner(new File(fileName));
-			
+
 			while (inputStream.hasNextLine())
 			{
 				// Get the next line in the file.
 				String line = inputStream.nextLine().trim();
-				
-				if (line.matches("[a-zA-Z_0-9]+ [a-zA-Z_0-9]+"))
+
+				if (line.isEmpty() == false)
 				{
-					String s[] = line.split(" ");
-					
-					if (symbolTable.contains(s[0]))
+					if (line.matches("[a-zA-Z_0-9]+ [a-zA-Z_0-9]+"))
 					{
-						System.err.println("ERROR: " + s[0] + " already exists at location " + symbolTable.hash(s[0]) + ".");
-					}
-					else
-					{
-						symbolTable.put(s[0], Integer.parseInt(s[1]));
-						System.out.println("STORED: " + s[0] + " " + s[1] + " at location " + symbolTable.hash(s[0]) + ".");
-					}
-				}
-				else
-				{
-					if (line.isEmpty() == false)
-					{
-						if (symbolTable.contains(line) == false)
+						String s[] = line.split(" ");
+
+						if (this.symbolTable.contains(s[0]))
 						{
-							System.err.println("ERROR: " + line + " not found.");
+							System.out.println("ERROR:\t" + s[0] + " already exists at location " + this.symbolTable.hash(s[0]) + ".");
 						}
 						else
 						{
-							System.out.println("FOUND: " + line + " at location " + symbolTable.hash(line) + " with value " + 
-								symbolTable.get(line) + ".");
+							this.symbolTable.put(s[0], Integer.parseInt(s[1]));
+							System.out.println("STORED:\t" + s[0] + " " + s[1] + " at location " + this.symbolTable.hash(s[0]) + ".");
+						}
+					}
+					else
+					{
+						if (this.symbolTable.contains(line) == false)
+						{
+							System.out.println("ERROR:\t" + line + " not found.");
+						}
+						else
+						{
+							System.out.println("FOUND:\t" + line + " at location " + this.symbolTable.hash(line) + " with value " +
+								this.symbolTable.get(line) + ".");
 						}
 					}
 				}
@@ -89,5 +109,18 @@ public class COP3404Project1Code
 				inputStream = null;
 			}
 		}
+	}
+
+	public final void readFile(final String... fileNames)
+	{
+		for (String fileName: fileNames)
+		{
+			this.readFile(fileName);
+		}
+	}
+
+	protected final void setSymbolTable(final SeparateChainingSymbolTable<String,Integer> symbolTable)
+	{
+		this.symbolTable = symbolTable;
 	}
 }
