@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 import api.util.Support;
 import api.util.datastructures.SeparateChainingSymbolTable;
+import api.util.stdlib.StdOut;
 
 public class COP3404Project1Code
 {
@@ -73,23 +74,23 @@ public class COP3404Project1Code
 
 						if (this.symbolTable.contains(s[0]))
 						{
-							System.out.println("ERROR:\t" + s[0] + " already exists at location " + this.symbolTable.hash(s[0]) + ".");
+							StdOut.println("ERROR:\t" + s[0] + " already exists at location " + this.symbolTable.hash(s[0]) + ".");
 						}
 						else
 						{
 							this.symbolTable.put(s[0], Integer.parseInt(s[1]));
-							System.out.println("STORED:\t" + s[0] + " " + s[1] + " at location " + this.symbolTable.hash(s[0]) + ".");
+							StdOut.println("STORED:\t" + s[0] + " " + s[1] + " at location " + this.symbolTable.hash(s[0]) + ".");
 						}
 					}
 					else
 					{
 						if (this.symbolTable.contains(line) == false)
 						{
-							System.out.println("ERROR:\t" + line + " not found.");
+							StdOut.println("ERROR:\t" + line + " not found.");
 						}
 						else
 						{
-							System.out.println("FOUND:\t" + line + " at location " + this.symbolTable.hash(line) + " with value " +
+							StdOut.println("FOUND:\t" + line + " at location " + this.symbolTable.hash(line) + " with value " +
 								this.symbolTable.get(line) + ".");
 						}
 					}
