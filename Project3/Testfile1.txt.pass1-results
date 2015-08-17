@@ -1,0 +1,32 @@
+1:100	ADDRES    START    100                               
+2:. TESTS PC FORWARD ADDRESSING
+3:. TESTS BASE ADDRESSING
+4:. TESTS PC BACKWARD ADDRESSING
+5:100	NOW      +LDB     #BEGIN              LOAD BASE REGISTER 
+6:104	XXX       BASE     BEGIN              TELL ASSEMBLER  
+7:104	YYY       LDA      BE                 A <- (M..M+2)    
+8:107	EN        RESW     4                  
+9:113	BE        WORD     2                              
+10:116	BEGIN     RESW     1
+11:119	JUNK      RESW     2200                              
+12:1ae1	THERE     RESW     1                              
+13:1ae4	ZZZ       LDA      JUNK                               
+14:1ae7	MMM       STA      THERE                              
+15:1aea	          END      NOW                              
+
+Start: 100			End: 100
+Location Counter: 1aea		Program Length: 19ea
+
+Table Location	Label	Address	Use	Csect
+64		ADDRES	100	main	main
+79		BE	113	main	main
+203		BEGIN	116	main	main
+181		EN	107	main	main
+248		JUNK	119	main	main
+111		MMM	1ae7	main	main
+126		NOW	100	main	main
+323		THERE	1ae1	main	main
+345		XXX	104	main	main
+320		YYY	104	main	main
+295		ZZZ	1ae4	main	main
+
