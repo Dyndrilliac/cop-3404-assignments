@@ -12,7 +12,7 @@ import api.util.stdlib.StdOut;
 
 public class COP3404Project3Code
 {
-	public static void main(final String[] args)
+	public static final void main(final String[] args)
 	{
 		SICXE_AssemblerProgram[] programs = new SICXE_AssemblerProgram[args.length];
 		
