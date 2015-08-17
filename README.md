@@ -68,7 +68,7 @@ The purpose of Project 3 is to interface with Project 1 and implement the first 
 	
 **Results:**
 
-The results of the first pass will be output to a plain-text file in the same directory as the input file with '.pass1-results' appended to the input file name.
+* The results of the first pass will be output to a plain-text file in the same directory as the input file with '.pass1-results' appended to the input file name.
 
 *******************************************************************
 
