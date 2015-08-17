@@ -27,10 +27,10 @@ The purpose of Project 1 is to implement an efficient hash-based symbol table fo
 **Execution:**
 
 * You can run the program using the java command.
-	* Example: 'java COP3404Project1Code input1.txt'
+	* **Example:** 'java COP3404Project1Code input1.txt'
 * Replace 'input1.txt' above with the name of any other plain-text file to supply custom test input.
 * You can also chain together multiple input files.
-	* Example: 'java COP3404Project1Code input1.txt input2.txt'
+	* **Example:** 'java COP3404Project1Code input1.txt input2.txt'
 
 *******************************************************************
 
@@ -61,10 +61,10 @@ The purpose of Project 3 is to interface with Project 1 and implement the first 
 **Execution:**
 
 * You can run the program using the java command.
-	* Example: 'java COP3404Project3Code Testfile1.txt'
+	* **Example:** 'java COP3404Project3Code Testfile1.txt'
 * Replace 'Testfile1.txt' above with the name of any other plain-text file to supply custom test input.
 * You can also chain together multiple input files.
-	* Example: 'java COP3404Project3Code Testfile1.txt Testfile2.txt'
+	* **Example:** 'java COP3404Project3Code Testfile1.txt Testfile2.txt'
 	
 **Results:**
 
