@@ -1,0 +1,12 @@
+ADDRES    START    100
+NOW      +LDB     #BEGIN
+XXX       BASE     BEGIN 
+YYY       LDA      BE
+          RESW     4
+BE        WORD     2 
+BEGIN     RESW     1
+JUNK      RESW     2200 
+THERE     RESW     1   
+ZZZ       LDA      JUNK 
+MMM       STA      THERE 
+          END      NOW 
