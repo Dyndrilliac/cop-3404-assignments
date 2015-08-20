@@ -1,0 +1,81 @@
+SIC SIMULATOR V1.6
+File names are:
+loader                                 
+DEVF1                                  
+DEVF2                                  
+DEVF3                                  
+DEV04                                  
+DEV05                                  
+DEV06                                  
+COMMAND: A(CCEPT file names, R(ENAME 1 or more files
+r
+loader                                 
+DEVF1                                  
+COP3404Project2Code.asm.obj
+DEVF2                                  
+DEVF3                                  
+DEV04                                  
+DEV05                                  
+DEV06                                  
+File names are:
+loader                                 
+COP3404Project2Code.asm.obj            
+DEVF2                                  
+DEVF3                                  
+DEV04                                  
+DEV05                                  
+DEV06                                  
+COMMAND: A(CCEPT file names, R(ENAME 1 or more files
+a
+
+COMMAND: S(TART, R(UN, E(NTER, D(UMP, H(COUNT, B(KPT, F(ILES, T(RACE, Q(UIT?
+s
+
+COMMAND: S(TART, R(UN, E(NTER, D(UMP, H(COUNT, B(KPT, F(ILES, T(RACE, Q(UIT?
+r
+  1000 INSTRUCTIONS EXECUTED
+P=00005C
+
+COMMAND: S(TART, R(UN, E(NTER, D(UMP, H(COUNT, B(KPT, F(ILES, T(RACE, Q(UIT?
+r
+  1000 INSTRUCTIONS EXECUTED
+P=00002C
+
+COMMAND: S(TART, R(UN, E(NTER, D(UMP, H(COUNT, B(KPT, F(ILES, T(RACE, Q(UIT?
+r
+  1000 INSTRUCTIONS EXECUTED
+P=00004B
+
+COMMAND: S(TART, R(UN, E(NTER, D(UMP, H(COUNT, B(KPT, F(ILES, T(RACE, Q(UIT?
+r
+  1000 INSTRUCTIONS EXECUTED
+P=000020
+
+COMMAND: S(TART, R(UN, E(NTER, D(UMP, H(COUNT, B(KPT, F(ILES, T(RACE, Q(UIT?
+r
+ATTEMPT TO READ DEVF1 PAST END OF FILE
+P=000053
+
+COMMAND: S(TART, R(UN, E(NTER, D(UMP, H(COUNT, B(KPT, F(ILES, T(RACE, Q(UIT?
+d 100-200
+
+0100 6D000375 001E0720 2303A026 0720200F
+0110 A03E0320 171D0003 0F201103 20111900
+0120 030F200B A0153B2F DD4F0000 FFFFF400
+0130 00270000 5D000032 0000C500 00370000
+0140 60000041 00004A00 005C0000 2B000008
+0150 00000800 002B0000 5C00004A 00004100
+0160 00600000 370000C5 00003200 005D0000
+0170 1EFFFFFA 4F0000FF FFFFFFFF FFFFFFFF
+0180 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+0190 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+01A0 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+01B0 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+01C0 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+01D0 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+01E0 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+01F0 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+0200 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+
+COMMAND: S(TART, R(UN, E(NTER, D(UMP, H(COUNT, B(KPT, F(ILES, T(RACE, Q(UIT?
+q
