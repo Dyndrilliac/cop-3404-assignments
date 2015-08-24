@@ -1,0 +1,21 @@
+COPY   START  1000
+       CLEAR  T
+	   FIX
+	   HIO
+	   FLOAT
+	   NORM
+	   SIO
+	   SHIFTL A,4
+	   SHIFTR A,4
+	   TIO
+	   TIXR   T
+	   SVC    8
+	   ADDR   A,T
+	   COMPR  A,T
+	   DIVR   A,T
+	   MULR   A,T
+	   RMO    A,T
+	   SUBR   A,T
+	   RSUB
+ONE	   BYTE   X'01'
+       END    COPY
