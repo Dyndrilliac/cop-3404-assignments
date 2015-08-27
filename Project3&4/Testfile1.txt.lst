@@ -1,0 +1,21 @@
+*********************************************
+University of North Florida: SIC/XE Assembler
+Version Date 4/23/2015
+08.27.2015 06:30:20 AM EDT
+*********************************************
+ASSEMBLER REPORT
+----------------
+	 Loc	Object Code	Source Code
+	 ---	-----------	-----------
+001- 00100	        	ADDRES    START    100
+002- 00100	69100116	NOW      +LDB     #BEGIN
+003- 00104	        	XXX       BASE     BEGIN 
+004- 00104	03200C  	YYY       LDA      BE
+005- 00107	        	EN        RESW     4
+006- 00113	000002  	BE        WORD     2
+007- 00116	        	BEGIN     RESW     1
+008- 00119	        	JUNK      RESW     2200 
+009- 01AE1	        	THERE     RESW     1   
+010- 01AE4	034003  	ZZZ       LDA      JUNK 
+011- 01AE7	0F2FF7  	MMM       STA      THERE 
+012- 01AEA	        	          END      NOW 

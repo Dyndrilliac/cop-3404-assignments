@@ -1,0 +1,34 @@
+*********************************************
+University of North Florida: SIC/XE Assembler
+Version Date 4/23/2015
+08.27.2015 06:30:21 AM EDT
+*********************************************
+ASSEMBLER REPORT
+----------------
+	 Loc	Object Code	Source Code
+	 ---	-----------	-----------
+001- 01000	        	FMT2   START  1000
+002- 01000	B450    	       CLEAR  T
+003- 01002	C4      		   FIX
+004- 01003	F4      		   HIO
+005- 01004	C0      		   FLOAT
+006- 01005	C8      		   NORM
+007- 01006	F0      		   SIO
+008- 01007	A403    		   SHIFTL A,4
+009- 01009	A803    		   SHIFTR A,4
+010- 0100B	F8      		   TIO
+011- 0100C	        	LOCCTR EQU    *
+012- 0100C	        	LOC2   EQU    LOCCTR
+013- 0100C	        	LOC3   EQU    LOC2-LOCCTR
+014- 0100C	B850    		   TIXR   T
+015- 0100E	B080    		   SVC    8
+016- 01010	9005    		   ADDR   A,T
+017- 01012	        		   ORG    1500
+018- 01500	A005    		   COMPR  A,T
+019- 01502	9C05    		   DIVR   A,T
+020- 01504	9805    		   MULR   A,T
+021- 01506	AC05    		   RMO    A,T
+022- 01508	9405    		   SUBR   A,T
+023- 0150A	4F0000  		   RSUB
+024- 0150D	01      	ONE	   BYTE   X'01'
+025- 0150E	        	       END    FMT2

@@ -1,0 +1,23 @@
+*********************************************
+University of North Florida: SIC/XE Assembler
+Version Date 4/23/2015
+08.27.2015 06:30:21 AM EDT
+*********************************************
+ASSEMBLER REPORT
+----------------
+	 Loc	Object Code	Source Code
+	 ---	-----------	-----------
+001- 00100	        	     START    100
+002- 00100	140127  	    *STL      RETA
+003- 00103	000118  	EX  *LDA      Q
+004- 00106	200115  	    *MUL      R
+005- 00109	18811B  	    *ADD      P,X
+006- 0010C	0C011E  	    *STA      ANS
+007- 0010F	4C0000  	    *RSUB
+008- 00112	080127  	    *LDL      RETA
+009- 00115	000003  	R    WORD     3
+010- 00118	000005  	Q    WORD     5
+011- 0011B	000003  	P    WORD     3
+012- 0011E	        	ANS  RESW     3
+013- 00127	        	RETA RESW     1
+014- 0012A	        	     END      EX

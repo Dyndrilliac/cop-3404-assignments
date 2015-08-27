@@ -1,4 +1,4 @@
-COPY   START  1000
+FMT2   START  1000
        CLEAR  T
 	   FIX
 	   HIO
@@ -8,9 +8,13 @@ COPY   START  1000
 	   SHIFTL A,4
 	   SHIFTR A,4
 	   TIO
+LOCCTR EQU    *
+LOC2   EQU    LOCCTR
+LOC3   EQU    LOC2-LOCCTR
 	   TIXR   T
 	   SVC    8
 	   ADDR   A,T
+	   ORG    1500
 	   COMPR  A,T
 	   DIVR   A,T
 	   MULR   A,T
@@ -18,4 +22,4 @@ COPY   START  1000
 	   SUBR   A,T
 	   RSUB
 ONE	   BYTE   X'01'
-       END    COPY
+       END    FMT2

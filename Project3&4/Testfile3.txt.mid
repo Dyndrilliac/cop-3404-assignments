@@ -1,0 +1,27 @@
+001:0100	     START    100
+002:0100	    *STL      RETA
+003:0103	EX  *LDA      Q
+004:0106	    *MUL      R
+005:0109	    *ADD      P,X
+006:010C	    *STA      ANS
+007:010F	    *RSUB
+008:0112	    *LDL      RETA
+009:0115	R    WORD     3
+010:0118	Q    WORD     5
+011:011B	P    WORD     3
+012:011E	ANS  RESW     3
+013:0127	RETA RESW     1
+014:012A	     END      EX
+
+Start:				0100
+End:				0103
+Location Counter:	012A
+Program Length:		002A
+
+Table Location	Label	Address	Use		CSect
+323 0      		ANS   	011E	main	main
+191 0      		EX    	0103	main	main
+080 0      		P     	011B	main	main
+081 0      		Q     	0118	main	main
+082 0      		R     	0115	main	main
+434 0      		RETA  	0127	main	main

@@ -1,0 +1,30 @@
+001:0100	ADDRES    START    100
+002:0100	NOW      +LDB     #BEGIN
+003:0104	XXX       BASE     BEGIN 
+004:0104	YYY       LDA      BE
+005:0107	EN        RESW     4
+006:0113	BE        WORD     2
+007:0116	BEGIN     RESW     1
+008:0119	JUNK      RESW     2200 
+009:1AE1	THERE     RESW     1   
+010:1AE4	ZZZ       LDA      JUNK 
+011:1AE7	MMM       STA      THERE 
+012:1AEA	          END      NOW 
+
+Start:				0100
+End:				0100
+Location Counter:	1AEA
+Program Length:		19EA
+
+Table Location	Label	Address	Use		CSect
+064 0      		ADDRES	0100	main	main
+079 0      		BE    	0113	main	main
+203 0      		BEGIN 	0116	main	main
+181 0      		EN    	0107	main	main
+248 0      		JUNK  	0119	main	main
+111 0      		MMM   	1AE7	main	main
+126 0      		NOW   	0100	main	main
+323 0      		THERE 	1AE1	main	main
+345 0      		XXX   	0104	main	main
+320 0      		YYY   	0104	main	main
+295 0      		ZZZ   	1AE4	main	main

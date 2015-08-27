@@ -1,0 +1,37 @@
+001:1000	FMT2   START  1000
+002:1000	       CLEAR  T
+003:1002		   FIX
+004:1003		   HIO
+005:1004		   FLOAT
+006:1005		   NORM
+007:1006		   SIO
+008:1007		   SHIFTL A,4
+009:1009		   SHIFTR A,4
+010:100B		   TIO
+011:100C	LOCCTR EQU    *
+012:100C	LOC2   EQU    LOCCTR
+013:100C	LOC3   EQU    LOC2-LOCCTR
+014:100C		   TIXR   T
+015:100E		   SVC    8
+016:1010		   ADDR   A,T
+017:1012		   ORG    1500
+018:1500		   COMPR  A,T
+019:1502		   DIVR   A,T
+020:1504		   MULR   A,T
+021:1506		   RMO    A,T
+022:1508		   SUBR   A,T
+023:150A		   RSUB
+024:150D	ONE	   BYTE   X'01'
+025:150E	       END    FMT2
+
+Start:				1000
+End:				1000
+Location Counter:	150E
+Program Length:		050E
+
+Table Location	Label	Address	Use		CSect
+298 0      		FMT2  	1000	main	main
+253 0      		LOC2  	100C	main	main
+254 0      		LOC3  	0000	main	main
+098 0      		LOCCTR	100C	main	main
+020 0      		ONE   	150D	main	main
