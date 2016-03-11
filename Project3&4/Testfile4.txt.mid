@@ -1,0 +1,51 @@
+001:0100	         START 100
+002:0100	EXA      LDT     #4           T <- (M..M+2)
+003:0103	         ADDR    T,A          R2 <- (R2 + R1)
+004:0105	         SUB    =X'1D' 
+005:0108	         SUB     N
+006:010B	        +ADD     SEC          A <- (A) + (M..M+2)
+007:010F	         STA    @ANS          M..M+2 <- (A)
+008:0112	         J       PAST
+009:0115	         LTORG 
+010:0116	PAST     LDX     THR          X <- (M..M+2)
+011:0119	         STA     ANS,X        M..M+2 <- (A) 
+012:011C	         SUB    =X'0259' 
+013:011F	         LDS    #ANS         S <- (M..M+2) 
+014:0122	         LDS    #100         S <- (M..M+2) 
+015:0125	         LDS      EXA         S <- (M..M+2) 
+016:0128	        +ADD     SEC,X        A <- (A) + (M..M+2)
+017:012C	         ADD    =C'12345'
+018:012F	         ADD    =X'1234567890550612345678901234567890'
+019:0132	         ADD    =X'1234567890550612345678901234567890'
+020:0135	         LTORG
+021:014D	         ADD    =X'1234567000000000000000000004567890'
+022:0150	         ADD    =X'5A3B'
+023:0153	         ADD    =C'05'
+024:0156	         RSUB                 PC <- (L)
+025:0159	SEC      WORD    -7
+026:015C	N        WORD    29
+027:015F	ANS      RESW    2            NOTE THE 2 WORDS
+028:0165	THR      WORD    3
+029:0168	         END     EXA
+
+Start:				0100
+End:				0100
+Location Counter:	017D
+Program Length:		007D
+
+Table Location	Label	Address	Use		CSect
+323 0      		ANS   	015F	main	main
+387 0      		EXA   	0100	main	main
+078 0      		N     	015C	main	main
+112 0      		PAST  	0116	main	main
+020 0      		SEC   	0159	main	main
+071 0      		THR   	0165	main	main
+
+Literal Input		Hex Value		Length	Address
+=C'05'           	3035           	2   	0168
+=C'12345'        	3132333435     	5   	0146
+=X'0259'         	0259           	2   	014B
+=X'1234567000000000000000000004567890'	1234567000000000000000000004567890	17  	016C
+=X'1234567890550612345678901234567890'	1234567890550612345678901234567890	17  	0135
+=X'1D'           	1D             	1   	0115
+=X'5A3B'         	5A3B           	2   	016A

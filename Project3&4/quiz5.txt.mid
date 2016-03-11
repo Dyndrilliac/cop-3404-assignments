@@ -1,0 +1,31 @@
+001:0100	EXAMPLE START   100
+002:0100	EXA     LDT     #4      T <- (M..M+2)
+003:0103	        +LDA    #0      A <. (M..M+2)
+004:0107	        ADDR    T,A     R2 <- (R2) + (R1)
+005:0109	        ADD     SEC     A <- (A) + (M..M+2)
+006:010C	        +STA    ANS     M..M+2 <- (A)
+007:0110	        LDX     ONE     X <= (M..M+2)
+008:0113	        STA     ANS,X   M..M+2 <- (A)
+009:0116	        RSUB            PC <- (L) GIVEN
+010:0119	SEC     WORD    -30
+011:011C	NUM     RESW    1
+012:011F	ANS     RESW    2       NOTE 2 WORDS
+013:0125	ONE     WORD    3
+014:0128	BIG     RESW    1000    NOTE 1000 WORDS
+015:0CE0	B       RESW    1
+016:0CE3	        END     EXA     GIVEN FINAL ADDRESS
+
+Start:				0100
+End:				0100
+Location Counter:	0CE3
+Program Length:		0BE3
+
+Table Location	Label	Address	Use		CSect
+323 0      		ANS   	011F	main	main
+066 0      		B     	0CE0	main	main
+099 0      		BIG   	0128	main	main
+387 0      		EXA   	0100	main	main
+075 0      		EXAMPLE	0100	main	main
+302 0      		NUM   	011C	main	main
+020 0      		ONE   	0125	main	main
+020 0      		SEC   	0119	main	main

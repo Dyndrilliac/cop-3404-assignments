@@ -1,0 +1,16 @@
+EXAMPLE START   100
+EXA     LDT     #4      T <- (m..m+2)
+        +LDA    #0      A <. (m..m+2)
+        ADDR    T,A     r2 <- (r2) + (r1)
+        ADD     SEC     A <- (A) + (m..m+2)
+        +STA    ANS     m..m+2 <- (A)
+        LDX     ONE     X <= (m..m+2)
+        STA     ANS,X   m..m+2 <- (A)
+        RSUB            PC <- (L) GIVEN
+SEC     WORD    -30
+NUM     RESW    1
+ANS     RESW    2       NOTE 2 WORDS
+ONE     WORD    3
+BIG     RESW    1000    NOTE 1000 WORDS
+B       RESW    1
+        END     EXA     GIVEN FINAL ADDRESS

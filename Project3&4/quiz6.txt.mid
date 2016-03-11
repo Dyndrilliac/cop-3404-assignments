@@ -1,0 +1,41 @@
+001:0100	EXAMPLE START   100
+002:0100	UP      LDB     #NUM
+003:0103	        BASE    NUM
+004:0103	        LDA     @ST
+005:0106	        +ADD    SEC
+006:010A	        STA     ANS
+007:010D	        ADDR    S,T
+008:010F	        ADD     #30
+009:0112	        J       UP
+010:0115	        STA     MM, X
+011:0118	        J       LAB
+012:011B	        RSUB
+013:011E	ST      WORD    4
+014:0121	SEC     WORD    7
+015:0124	NUM     RESW    1
+016:0127	ANS     RESW    1
+017:012A	BSE     RESW    1
+018:012D	BUF     RESW    1000
+019:0CE5	MM      RESW    1
+020:0CE8	YY      RESW    1
+021:0CEB	LAB     RMO     A,T
+022:0CED	        STA     YY
+023:0CF0	        END     EXAMPLE
+
+Start:				0100
+End:				0100
+Location Counter:	0CF0
+Program Length:		0BF0
+
+Table Location	Label	Address	Use		CSect
+323 0      		ANS   	0127	main	main
+407 0      		BSE   	012A	main	main
+470 0      		BUF   	012D	main	main
+075 0      		EXAMPLE	0100	main	main
+294 0      		LAB   	0CEB	main	main
+428 0      		MM    	0CE5	main	main
+302 0      		NUM   	0124	main	main
+020 0      		SEC   	0121	main	main
+112 0      		ST    	011E	main	main
+170 0      		UP    	0100	main	main
+303 0      		YY    	0CE8	main	main

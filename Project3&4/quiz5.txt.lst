@@ -1,0 +1,25 @@
+*********************************************
+University of North Florida: SIC/XE Assembler
+Version Date 4/23/2015
+02.20.2016 11:39:03 AM EST
+*********************************************
+ASSEMBLER REPORT
+----------------
+	 Loc	Object Code	Source Code
+	 ---	-----------	-----------
+001- 00100	        	EXAMPLE START   100
+002- 00100	750004  	EXA     LDT     #4      T <- (M..M+2)
+003- 00103	01100000	        +LDA    #0      A <. (M..M+2)
+004- 00107	9050    	        ADDR    T,A     R2 <- (R2) + (R1)
+005- 00109	1B200D  	        ADD     SEC     A <- (A) + (M..M+2)
+006- 0010C	0F10011F	        +STA    ANS     M..M+2 <- (A)
+007- 00110	072012  	        LDX     ONE     X <= (M..M+2)
+008- 00113	0FA009  	        STA     ANS,X   M..M+2 <- (A)
+009- 00116	4F0000  	        RSUB            PC <- (L) GIVEN
+010- 00119	FFFFE2  	SEC     WORD    -30
+011- 0011C	        	NUM     RESW    1
+012- 0011F	        	ANS     RESW    2       NOTE 2 WORDS
+013- 00125	000003  	ONE     WORD    3
+014- 00128	        	BIG     RESW    1000    NOTE 1000 WORDS
+015- 00CE0	        	B       RESW    1
+016- 00CE3	        	        END     EXA     GIVEN FINAL ADDRESS

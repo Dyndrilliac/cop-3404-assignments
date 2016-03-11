@@ -1,0 +1,29 @@
+         start 100
+EXA      LDT     #4           T <- (m..m+2)
+         ADDR    T,A          r2 <- (r2 + r1)
+         SUB    =X'1D' 
+         SUB     N
+        +ADD     SEC          A <- (A) + (m..m+2)
+         STA    @ANS          m..m+2 <- (A)
+         J       PAST
+         LTORG 
+PAST     LDX     THR          X <- (m..m+2)
+         STA     ANS,X        m..m+2 <- (A) 
+         SUB    =X'0259' 
+         LDS    #ANS         S <- (m..m+2) 
+         LDS    #100         S <- (m..m+2) 
+         LDS      EXA         S <- (m..m+2) 
+        +ADD     SEC,X        A <- (A) + (m..m+2)
+         ADD    =C'12345'
+         ADD    =X'1234567890550612345678901234567890'
+         ADD    =X'1234567890550612345678901234567890'
+         LTORG
+         ADD    =X'1234567000000000000000000004567890'
+         ADD    =X'5A3B'
+         ADD    =C'05'
+         RSUB                 PC <- (L)
+SEC      WORD    -7
+N        WORD    29
+ANS      RESW    2            NOTE the 2 WORDS
+THR      WORD    3
+         END     EXA

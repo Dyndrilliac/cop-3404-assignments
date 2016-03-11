@@ -1,0 +1,23 @@
+EXAMPLE START   100
+UP      LDB     #NUM
+        BASE    NUM
+        LDA     @ST
+        +ADD    SEC
+        STA     ANS
+        ADDR    S,T
+        ADD     #30
+        J       UP
+        STA     MM, X
+        J       LAB
+        RSUB
+ST      WORD    4
+SEC     WORD    7
+NUM     RESW    1
+ANS     RESW    1
+BSE     RESW    1
+BUF     RESW    1000
+MM      RESW    1
+YY      RESW    1
+LAB     RMO     A,T
+        STA     YY
+        END     EXAMPLE
